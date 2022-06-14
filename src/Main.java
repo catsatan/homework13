@@ -11,25 +11,26 @@
             //задание 2
             int clientOC = 1;
             int clientDeviceYear = 2014;
-            if (clientOC == 0) {
-                if (clientDeviceYear >= 2015) {
-                    System.out.println("установите версию для Android"); // вот тут насчет вложенности не понял, так допускается один вложенный?
-                    //или именно конструкцию else if несколько раз лучше использовать?
-                } else
-                    System.out.println(" android lite");
-            } else if (clientDeviceYear >= 2015) {
-                System.out.println("установите  версию для Ios");
-
-            } else {
-                System.out.println("lite ios");
+            if (clientDeviceYear >= 2015 && clientOC == 0) {
+               System.out.println("установите по ссылке для android");
             }
+            else if (clientDeviceYear <= 2015 && clientOC == 0){
+                System.out.println("установите по ссылке для android облегченную версию");
+            }
+            else if (clientDeviceYear <= 2015 && clientOC == 1){
+                System.out.println("установите по ссылке для IOS облегченную версию");
+            }
+            else if (clientDeviceYear >= 2015 && clientOC == 1){
+                System.out.println("установите по ссылке для IOS ");
+            }
+
 
             // задание 3
             int year = 2012;
-            if (year % 4 != 0) {
-                System.out.println("год не високосный");
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 ==0  ) {
+                System.out.println("год  високосный");
             } else {
-                System.out.println("год високосный");
+                System.out.println("год не високосный");
             }
 
 
@@ -79,7 +80,7 @@
                     System.out.println("октябрь осень");
                     break;
                 case 11:
-                    System.out.println("ноябрь зима");
+                    System.out.println("ноябрь осень");
                     break;
                 case 12:
                     System.out.println("декабрь зима");
